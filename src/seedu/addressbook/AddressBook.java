@@ -47,14 +47,9 @@ public class AddressBook {
     private static final String VERSION = "AddessBook Level 1 - Version 1.0";
 
     /**
-     * A decorative prefix added to the beginning of lines printed by AddressBook
-     */
-    private static final String LINE_PREFIX = "|| ";
-
-    /**
      * A platform independent line separator.
      */
-    private static final String LS = System.lineSeparator() + LINE_PREFIX;
+    private static final String LS = System.lineSeparator() + "|| ";
 
     /*
      * NOTE : ==================================================================
@@ -590,7 +585,7 @@ public class AddressBook {
      * @return full line entered by the user
      */
     private static String getUserInput() {
-        System.out.print(LINE_PREFIX + "Enter command: ");
+        System.out.print("|| Enter command: ");
         String inputLine = SCANNER.nextLine();
         // silently consume all blank and comment lines
         while (inputLine.trim().isEmpty() || inputLine.trim().charAt(0) == INPUT_COMMENT_MARKER) {
@@ -611,7 +606,7 @@ public class AddressBook {
      */
     private static void showToUser(String... message) {
         for (String m : message) {
-            System.out.println(LINE_PREFIX + m);
+            System.out.println("|| "+ m);
         }
     }
 
